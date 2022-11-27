@@ -36,4 +36,13 @@ class TestController extends AbstractController
         $number=random_int(0,100);
         return $this->render('test/third_page.html.twig',['randomNumber'=>$number]);
     }
+
+    // using variables
+    #[Route('/test-var', name: 'var')]
+   public function testVar()
+   {
+       $arr = array("name"=>"molli", "age"=>3); // here we create a simple array have keys and values
+       return $this->render('test/test_var.html.twig',array("varName"=>$arr)); // this is the way how to send a variable from php (variable you created in the controller) to the twig file
+   }
+
 }

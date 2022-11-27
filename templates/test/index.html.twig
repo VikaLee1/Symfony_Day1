@@ -12,10 +12,12 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     Hello from the test page
-    <h2>Go to the <a href="firstPage">first page</a></h2>
-    <h2>Go to the <a href="secondPage">second page - random Number in the URL</a></h2>
-    <h2>Go to the <a href="thirdPage">third page- random Number in the browser</a></h2>
-    <h2>Go to the <a href="static/page1">static pages</a></h2>
+    <h2>Go to the <a href="/firstPage">first page</a></h2>
+    <h2>Go to the <a href="/secondPage/99">second page - random Number in the URL</a></h2>
+    <h2>Go to the <a href="/thirdPage">third page- random Number in the browser</a></h2>
+    <h2>Go to the <a href="/test-var">page with variables</a></h2>
+    <h2>Go to the <a href="/static/page1">static pages</a></h2>
+
 </div>
 
 {% endblock %}

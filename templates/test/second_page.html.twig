@@ -1,4 +1,16 @@
-<h1>Hello from the second page</h1>
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Viktoria!{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+
+<h1 class="text-center">Hello from the second page</h1>
 <h2>Randon Number function</h2>
-<h3>Your Randon Number is: {{randomNumber}}</h3>
-<button><a href="test">Go back</a></button>
+<h3 class="text-success">Your Randon Number is: {{randomNumber}}</h3>
+<button class="btn btn-secondary"><a href="/test" class="text-decoration-none text-white">Go back</a></button>
+
+
+{% endblock %}

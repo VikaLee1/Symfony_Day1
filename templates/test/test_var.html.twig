@@ -1,0 +1,63 @@
+{{ varName.name }} <br>
+{{ varName.age }}  <br>
+<h1>Filters</h1>
+<p>1. remove all HTML tags from the name and title-case it</p>
+{{ varName.name|striptags|title}}  <br>
+
+<p>2. arguments have parentheses around</p>
+
+{% set sizes = [34, 36, 38, 40, 42] %}
+
+{{ sizes|filter(v => v > 38)|join(', ') }}
+
+<p>3. {{ "This text becomes uppercase" | upper }}</p> <br>
+
+<h1>Functions</h1>
+{% for i in range(0, 10) %}
+{{ i }},
+{% endfor %}
+
+<h1>Named arguments</h1>
+{% for i in range(low=1, high=20, step=5) %}
+{{ i }},
+{% endfor %}
+<br>
+{# the first argument is the date format, which defaults to the global date format if null is passed #}
+{{ "now"|date(null, "Europe/Paris") }} <br>
+{# or skip the format value by using a named argument for the time zone #}
+{{ "now"|date(timezone="Europe/Paris") }} <br>
+
+{{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
+
+
+<h1>Control Structure</h1>
+<h1>Members</h1>
+<ul>
+{% set users = [
+   {
+       name:"john",
+   },{
+       name:"mark",
+   },{
+       name:"phil",
+   },{
+       name:"max"
+   }
+] %}
+<h3>for tag</h3>
+{% for user in users %}
+<li>{{ user.name }}</li>
+{% endfor %}
+
+
+<h3>if tag</h3>
+{% if users|length > 0 %}
+<ul>
+{% for user in users %}
+<li>{{ user.name }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</ul>
+<br><button><a href="test">Go back</a></button>
